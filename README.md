@@ -1,31 +1,33 @@
 # use-localstorage
 
-A react hook to store values and communicate between components using [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). It is ready to be used with SSR frameworks like NextJS or Gatsby.
+A react hook to store values and communicate between components using the [local storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), ready to be used with SSR frameworks like NextJS or Gatsby.
 
 ## Install
 
 Install with NPM:
 
 ```
-npm i --save page-meta-scraper
+npm i --save @olerichter00/use-localstorage
 ```
 
 Install with Yarn:
 
 ```
-yarn add page-meta-scraper
+yarn add @olerichter00/use-localstorage
 ```
 
 ## Usage
 
-With an initial value:
+**use-localstorage** can either be initialized with a value or with a function that returns the initial value. This is especially helpful with SSR if the inital value is only available in the browser environment (like `document` or `window`).
 
-```javascript
+**Using an inital value**
+
+```typescript
 import React from 'react'
 import useLocalStorage from './useLocalStorage'
 
 export default function App() {
-  const [count, setCount] = useLocalStorage('key', 1)
+  const [count, setCount] = useLocalStorage<number>('key', 1)
 
   return (
     <div className="App">
@@ -39,29 +41,26 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
 ```
 
-With a function as inital value (usefull when accessing the window object using SSR.
+**Using with a function as inital value**
 
-```javascript
+```typescript
 import React from 'react'
 import useLocalStorage from '@olerichter00/use-localstorage'
 
 export default function App() {
   const darkColorScheme = () =>
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 
-  const [darkMode, setDarkMode] = useLocalStorage('dark-mode', darkColorScheme)
+  const [darkMode, setDarkMode] = useLocalStorage<boolean>('dark-mode', darkColorScheme)
 
   return (
     <div
       className="App"
       style={{
-        height: '100vh',
         backgroundColor: darkMode ? 'black' : 'white',
       }}
     >
-      <button onClick={() => setDarkMode(true)}>Dark</button>
-      <button onClick={() => setDarkMode(false)}>Light</button>
+      <button onClick={() => setDarkMode(!darkMode)}>Switch Color</button>
     </div>
   )
 }
@@ -69,6 +68,8 @@ export default function App() {
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
 ```
+
+[![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elated-fast-fuk2u?fontsize=14&hidenavigation=1&theme=dark)
 
 ## License
 
