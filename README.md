@@ -2,6 +2,8 @@
 
 A react hook to store values and communicate between components using the [local storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), ready to be used with SSR frameworks like NextJS or Gatsby.
 
+[![DeepSource](https://deepsource.io/gh/olerichter00/use-localstorage.svg/?label=active+issues)](https://deepsource.io/gh/olerichter00/use-localstorage/?ref=repository-badge)
+
 ## Install
 
 Install with NPM:
