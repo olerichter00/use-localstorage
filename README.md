@@ -1,7 +1,8 @@
 # use-localstorage
 
-A react hook to store values and communicate between components using the [local storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), ready to be used with SSR frameworks like NextJS or Gatsby.
+A react hook that uses the [local storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to store values and communicate between components. The hook is designed to be used with SSR frameworks like NextJS or Gatsby.
 
+![CI status](https://github.com/olerichter00/use-localstorage/workflows/CI/badge.svg)
 [![DeepSource](https://deepsource.io/gh/olerichter00/use-localstorage.svg/?label=active+issues)](https://deepsource.io/gh/olerichter00/use-localstorage/?ref=repository-badge)
 [![DeepScan grade](https://deepscan.io/api/teams/11955/projects/15037/branches/294269/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11955&pid=15037&bid=294269)
 
@@ -23,14 +24,14 @@ yarn add @olerichter00/use-localstorage
 
 **use-localstorage** can either be initialized with a value or with a function that returns the initial value. This is especially helpful with SSR if the inital value is only available in the browser environment (like `document` or `window`).
 
-**Using an inital value**
+**Usage with an inital value**
 
 ```typescript
 import React from 'react'
 import useLocalStorage from './useLocalStorage'
 
 export default function App() {
-  const [count, setCount] = useLocalStorage<number>('key', 1)
+  const [count, setCount] = useLocalStorage<number>('counter', 1)
 
   return (
     <div className="App">
@@ -44,7 +45,7 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
 ```
 
-**Using with a function as inital value**
+**Usage with a function as inital value**
 
 ```typescript
 import React from 'react'
