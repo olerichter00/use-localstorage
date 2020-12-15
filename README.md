@@ -2,9 +2,14 @@
 
 A react hook that uses the [local storage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to store values and communicate between components. The hook is designed to be used with SSR frameworks like NextJS or Gatsby.
 
+
 ![CI status](https://github.com/olerichter00/use-localstorage/workflows/CI/badge.svg)
 [![DeepSource](https://deepsource.io/gh/olerichter00/use-localstorage.svg/?label=active+issues)](https://deepsource.io/gh/olerichter00/use-localstorage/?ref=repository-badge)
 [![DeepScan grade](https://deepscan.io/api/teams/11955/projects/15037/branches/294269/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11955&pid=15037&bid=294269)
+[![npm version](https://badge.fury.io/js/%40olerichter00%2Fuse-localstorage.svg)](https://badge.fury.io/js/%40olerichter00%2Fuse-localstorage)
+
+
+[![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elated-fast-fuk2u?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Install
 
@@ -73,7 +78,6 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
 ```
 
-[![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elated-fast-fuk2u?fontsize=14&hidenavigation=1&theme=dark)
 
 ## License
 
