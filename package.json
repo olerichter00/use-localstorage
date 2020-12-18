@@ -1,6 +1,6 @@
 {
   "name": "@olerichter00/use-localstorage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React hook to use the local storage.",
   "author": "Ole Richter <ole.richter91@gmail.com>",
   "license": "MIT",
